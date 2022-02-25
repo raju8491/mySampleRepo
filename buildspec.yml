@@ -1,20 +1,13 @@
 version: 0.2
-
 phases:
-	install:
-    commands:
-      - echo Entered the install phase...
-      - apt-get update -y
-      - apt-get install -y maven
-    finally:
-      - echo This always runs even if the update or install command fails 
-    build:
+	build:
     commands:
       - echo Build started on `date`
-      - mvn clean install
+      - mvn clean package
   post_build:
     commands:
-      - echo Build completed on***** `date`
+      - echo Build completed on `date`
 artifacts:
   files:
     - target/myApp.jar
+    discard-paths:yes
