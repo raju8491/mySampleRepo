@@ -17,7 +17,7 @@ public class MyAppApplication {
 	
 	@GetMapping("/app")
 	public String getApp() {
-		return "The port is "+port;
+		return "you are in  port number : "+port;
 	}
 	
 	@GetMapping("/country")
